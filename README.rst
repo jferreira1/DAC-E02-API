@@ -503,6 +503,6 @@ orcId			 Identificador ORCID do autor.
 
                 {
                 	"id": 3,
-					"email": "johndoe@email.com"
-					"orcId": "9999-8888-7777-6666"
+			"email": "johndoe@email.com"
+			"orcId": "9999-8888-7777-6666"
                 }
