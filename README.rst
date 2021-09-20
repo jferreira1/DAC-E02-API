@@ -143,6 +143,7 @@ Exclui um volume
 Parâmetro        Descrição
 ==============   ===============
 id                Identificador único do volume.
+==============   ===============
 
 .. code-block:: bash
 
