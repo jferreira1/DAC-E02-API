@@ -36,7 +36,8 @@ Retorna uma lista de todos os volumes registrados
    
 .. code-block:: js
 [{
-    "id": 1,
+                {
+                    "id": 1,
     "siglaEvento": "Semana Acadêmica UFF",
     "cidadeEvento": "Niterói",
     "dataInicio": "2020-09-30",
@@ -54,6 +55,7 @@ Retorna uma lista de todos os volumes registrados
     "descEn": "UFF project presentation week ",
     "artigos": [],
     "numeroEvento": 2
+                }
 }]
 
 GET
