@@ -67,6 +67,7 @@ Retorna um volume pelo parâmetro id.
    GET /volume/listar/{id} HTTP/1.1
 
 .. code-block:: js
+
                 {
                     "id": 2,
                     "siglaEvento": "Semana Acadêmica UFF",
@@ -100,6 +101,7 @@ artigos           Array com artigos associados ao volume.
    POST /volume/ HTTP/1.1
 
 .. code-block:: js
+
                 {
                     "siglaEvento": "Semana Acadêmica UFRJ",
                     "cidadeEvento": "Rio de Janeiro",
@@ -121,6 +123,7 @@ Atualiza um volume e retorna o objeto volume atualizado.
    PUT /volume/ HTTP/1.1
 
 .. code-block:: js
+
                 {
 	                "id": 11,
                 	"siglaEvento": "Semana Acadêmica UFF",
@@ -146,6 +149,7 @@ id                Identificador único do volume.
    DELETE /volume/ HTTP/1.1
 
 .. code-block:: js
+
                 {
                 	"id": 3
                 }
