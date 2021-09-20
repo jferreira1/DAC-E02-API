@@ -195,26 +195,28 @@ Retorna uma lista de todos os artigos registrados
                 {
                     "id": 1,
                     "ordem": 1,
-                    "email": "johndoe@email.com",
-                    "nome": "John",
-                    "nomeMeio": "",
-                    "sobrenome": "Doe",
-                    "afiliacao": "Universidade Teste",
-                    "afiliacaoEn": "Test University",
-                    "pais": "BR",
-                    "orcId": "0123-4567-8901-2345"
+                    "idioma": "PT",
+                    "titulo": "TituloPT",
+                    "tituloEn": "TituloEN",
+                    "resumo": "ResumoPT",
+                    "resumoEn": "ResumoEN",
+                    "keywords": "keywordsPT",
+                    "keywordsEn": "keywordsEN",
+                    "numPaginas": 42,
+		    autores: []
                 },
                 {
                     "id": 2,
                     "ordem": 2,
-                    "email": "janedoe@email.com",
-                    "nome": "Jane",
-                    "nomeMeio": "",
-                    "sobrenome": "Doe",
-                    "afiliacao": "Universidade Teste",
-                    "afiliacaoEn": "Test University",
-                    "pais": "BR",
-                    "orcId": "2345-4567-8901-0123"
+                    "idioma": "PT",
+                    "titulo": "Titulo no idioma original",
+                    "tituloEn": "English Title",
+                    "resumo": "Resumo do artigo, escrito no idioma do artigo.",
+                    "resumoEn": "Article abstract, wrote in english.",
+                    "keywords": "palavras-chaves;artigo;portugues;teste;dac;mola",
+                    "keywordsEn": "palavras-chaves;artigo;portugues;teste;dac;mola",
+                    "numPaginas": 777,
+		    autores: []
                 }
 
 GET
@@ -329,4 +331,178 @@ id               Identificador único do artigo.
 
                 {
                 	"id": 3
+                }
+		
+AUTOR
+-------------
+
+==============   ===============
+Propriedade      Descrição
+==============   ===============
+id	         Identificador único do autor.
+ordem            Define a ordem dos autores no artigo.
+email            E-mail do autor.
+nome	         Nome do autor.
+nomeMeio	 Nome do meio do autor.
+sobrenome	 Sobrenome do autor.
+afiliacao        Afiliação do autor.
+afiliacaoEn      Afiliação do autor em inglês.
+pais             País de origem do autor.
+orcId            ORCID do autor.
+==============   ===============
+
+Endpoint
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+    /autor/
+    
+GET
++++++
+
+Retorna uma lista de todos os autores registrados
+
+.. code-block:: bash
+
+   GET /autor/listar HTTP/1.1
+   
+.. code-block:: js
+
+                {
+                    "id": 1,
+                    "ordem": 1,
+                    "email": "johndoe@email.com",
+                    "nome": "John",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "0123-4567-8901-2345"
+                },
+                {
+                    "id": 2,
+                    "ordem": 2,
+                    "email": "janedoe@email.com",
+                    "nome": "Jane",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "2345-4567-8901-0123"
+                }
+
+GET
++++++
+
+Retorna um autor pelo parâmetro id.
+
+.. code-block:: bash
+
+   GET /autor/listar/{id} HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id": 1,
+                    "ordem": 1,
+                    "email": "johndoe@email.com",
+                    "nome": "John",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "0123-4567-8901-2345"
+                }
+
+POST
++++++
+
+Registra um novo autor e retorna o objeto autor.
+
+==============   ===============
+Parâmetro        Descrição
+==============   ===============
+ordem            Define a ordem dos autores no artigo.
+email            Idioma original de publicação do artigo.
+nome	         Nome do autor.
+nomeMeio	 Nome do meio do autor.
+sobrenome	 Sobrenome do autor.
+afiliacao        Afiliação do autor.
+afiliacaoEn      Afiliação do autor em inglês.
+pais             País de origem do autor.
+orcId            ORCID do autor.
+artigo           Artigos associados ao autor.
+==============   ===============
+
+.. code-block:: bash
+
+   POST /autor/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id": 3,
+                    "ordem": 1,
+                    "email": "josedascouves@email.com",
+                    "nome": "José",
+                    "nomeMeio": "das",
+                    "sobrenome": "Couves",
+                    "afiliacao": "Universidade de Agronomia",
+                    "afiliacaoEn": "Agronomy College",
+                    "pais": "UK",
+                    "orcId": "9999-9999-9999-9999"
+                }
+
+
+PUT
++++++
+
+Atualiza um autor e retorna o objeto autor atualizado.
+
+.. code-block:: bash
+
+   PUT /autor/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id": 25,
+                    "ordem": 1,
+                    "email": "fulano@email.com",
+                    "nome": "Fulano",
+                    "nomeMeio": "",
+                    "sobrenome": "Silva",
+                    "afiliacao": "Universidade Estadual do Rio de Janeiro",
+                    "afiliacaoEn": "State University of Rio de Janeiro",
+                    "pais": "BR",
+                    "orcId": "1111-1111-1111-1111"
+                }
+
+DELETE
++++++
+
+Exclui um autor
+
+==============   ===============
+Parâmetro        Descrição
+==============   ===============
+id               Identificador único do volume.
+email            Endereço de e-mail do autor.
+orcId			 Identificador ORCID do autor.
+==============   ===============
+
+.. code-block:: bash
+
+   DELETE /autor/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                	"id": 3,
+					"email": "johndoe@email.com"
+					"orcId": "9999-8888-7777-6666"
                 }
