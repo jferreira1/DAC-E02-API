@@ -231,18 +231,56 @@ Retorna um artigo pelo parâmetro id.
 .. code-block:: js
 
                 {
-                    "id": 1,
-                    "ordem": 1,
-                    "email": "johndoe@email.com",
-                    "nome": "John",
-                    "nomeMeio": "",
-                    "sobrenome": "Doe",
-                    "afiliacao": "Universidade Teste",
-                    "afiliacaoEn": "Test University",
-                    "pais": "BR",
-                    "orcId": "0123-4567-8901-2345"
+                    "id": 7,
+                    "ordem": 3,
+                    "idioma": "ES",
+                    "titulo": "Titulo de lo articulo",
+                    "tituloEn": "English title",
+                    "resumo": "Resumo de lo artículo",
+                    "resumoEn": "English abstract",
+                    "keywords": "articulo;espanol",
+                    "keywordsEn": "article;spanish",
+                    "numPaginas": 54,
+		    autores: []
                 }
 
+GET
++++++
+
+Retorna os artigos associados pelo volume através do parâmetro volume_id.
+
+.. code-block:: bash
+
+   GET /artigo/listar/volume/{volume_id} HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id": 17,
+                    "ordem": 2,
+                    "idioma": null,
+                    "titulo": "",
+                    "tituloEn": "Second article",
+                    "resumo": "Um artigo simples de teste",
+                    "resumoEn": "A simple test article ",
+                    "keywords": "artigo;teste",
+                    "keywordsEn": "article;test",
+                    "numPaginas": 16,
+                    "autores": []
+                },
+		{
+		    "id": 18,
+                    "ordem": 4,
+                    "idioma": "PT",
+                    "titulo": "",
+                    "tituloEn": "First test article",
+                    "resumo": "Um artigo simples de teste",
+                    "resumoEn": "A simple test article ",
+                    "keywords": "artigo;teste",
+                    "keywordsEn": "article;test",
+                    "numPaginas": 16,
+                    "autores": []
+		}
 POST
 +++++
 
@@ -417,6 +455,68 @@ Retorna um autor pelo parâmetro id.
                     "pais": "BR",
                     "orcId": "0123-4567-8901-2345"
                 }
+
+GET
++++++
+
+Retorna uma lista de todos os autores associados a um determinado artigo
+
+.. code-block:: bash
+
+   GET /autor/listar/artigo/{artigo_id} HTTP/1.1
+   
+.. code-block:: js
+
+                [
+                  {
+                    "id": 15,
+                    "ordem": 1,
+                    "email": "joaocouves@email.com",
+                    "nome": "João",
+                    "nomeMeio": "das",
+                    "sobrenome": "Couves",
+                    "afiliacao": "Faculdade de Agronomia",
+                    "afiliacaoEn": "Agronomy College",
+                    "pais": "UK",
+                    "orcId": "4321-4321-4321-4321"
+                  },
+                  {
+                    "id": 16,
+                    "ordem": 2,
+                    "email": "joaocebolas@email.com",
+                    "nome": "João",
+                    "nomeMeio": "das",
+                    "sobrenome": "Cebolas",
+                    "afiliacao": "Faculdade de Agronomia",
+                    "afiliacaoEn": "Agronomy College",
+                    "pais": "UK",
+                    "orcId": "1234-1234-1234-1234"
+                  },
+                  {
+                    "id": 17,
+                    "ordem": 3,
+                    "email": "joaobatatas@email.com",
+                    "nome": "João",
+                    "nomeMeio": "das",
+                    "sobrenome": "Batatas",
+                    "afiliacao": "Faculdade de Agronomia",
+                    "afiliacaoEn": "Agronomy College",
+                    "pais": "UK",
+                    "orcId": "5197-2486-2358-2186"
+                  },
+                  {
+                    "id": 20,
+                    "ordem": 4,
+                    "email": "johndoe@email.com",
+                    "nome": "João",
+                    "nomeMeio": "das",
+                    "sobrenome": "Bananas",
+                    "afiliacao": "Faculdade de Agronomia",
+                    "afiliacaoEn": "Agronomy College",
+                    "pais": "UK",
+                    "orcId": "6436-3463-3463-4534"
+                  }
+                ]
 
 POST
 +++++
