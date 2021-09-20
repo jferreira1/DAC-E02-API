@@ -1,4 +1,6 @@
-# Documentação da API REST
+========================
+Documentação da API REST
+========================
 Essa API faz parte do projeto da disciplina Desenvolvimento de Aplicações Corporativas 2021/1 da UFF. Fornece os serviços de GET/PUT/POST/DELETE sem autenticação para as entidades VOLUME, ARTIGO e AUTOR definidas na entrega anterior.
 
 VOLUME
@@ -14,6 +16,7 @@ dataInicio        Data do início do evento/volume
 descPt            Descrição em idioma original do volume.
 descEn            Descrição em versão inglesa do volume.
 artigos           Array com artigos associados ao volume.
+==============   ===============
 
 Endpoint
 ~~~~~~~~~~~~~~~
@@ -30,7 +33,7 @@ Retorna uma lista de todos os volumes registrados
 .. code-block:: bash
 
    GET /volume/listar HTTP/1.1
-
+   
 .. code-block:: js
 [{
     "id": 1,
