@@ -67,16 +67,16 @@ Retorna um volume pelo parâmetro id.
    GET /volume/listar/{id} HTTP/1.1
 
 .. code-block:: js
-{
-    "id": 2,
-    "siglaEvento": "Semana Acadêmica UFF",
-    "cidadeEvento": "Niterói",
-    "dataInicio": "2021-09-30",
-    "descPt": "Semana de apresentação de projetos da UFF",
-    "descEn": "UFF project presentation week ",
-    "artigos": [],
-    "numeroEvento": 2
-}
+                {
+                    "id": 2,
+                    "siglaEvento": "Semana Acadêmica UFF",
+                    "cidadeEvento": "Niterói",
+                    "dataInicio": "2021-09-30",
+                    "descPt": "Semana de apresentação de projetos da UFF",
+                    "descEn": "UFF project presentation week ",
+                    "artigos": [],
+                    "numeroEvento": 2
+                }
 
 POST
 +++++
@@ -100,15 +100,15 @@ artigos           Array com artigos associados ao volume.
    POST /volume/ HTTP/1.1
 
 .. code-block:: js
-{
-    "siglaEvento": "Semana Acadêmica UFRJ",
-    "cidadeEvento": "Rio de Janeiro",
-    "dataInicio": "2021-10-25",
-    "descPt": "Semana de apresentação de projetos da UFRJ",
-    "descEn": "UFRJ project presentation week",
-    "artigos": [],
-    "numeroEvento": 1
-}
+                {
+                    "siglaEvento": "Semana Acadêmica UFRJ",
+                    "cidadeEvento": "Rio de Janeiro",
+                    "dataInicio": "2021-10-25",
+                    "descPt": "Semana de apresentação de projetos da UFRJ",
+                    "descEn": "UFRJ project presentation week",
+                    "artigos": [],
+                    "numeroEvento": 1
+                }
 
 
 PUT
@@ -121,15 +121,15 @@ Atualiza um volume e retorna o objeto volume atualizado.
    PUT /volume/ HTTP/1.1
 
 .. code-block:: js
-{
-	"id": 11,
-	"siglaEvento": "Semana Acadêmica UFF",
-	"cidadeEvento": "Niterói",
-	"dataInicio": "2021-10-15",
-	"descPt": "Semana de apresentação de projetos da UFF",
-	"descEn": "Week of apresentation of projects from UFF",
-	"numeroEvento": 1
-}
+                {
+	                "id": 11,
+                	"siglaEvento": "Semana Acadêmica UFF",
+	                "cidadeEvento": "Niterói",
+                	"dataInicio": "2021-10-15",
+                	"descPt": "Semana de apresentação de projetos da UFF",
+                	"descEn": "Week of apresentation of projects from UFF",
+                	"numeroEvento": 1
+                }
 
 DELETE
 +++++
@@ -146,9 +146,9 @@ id                Identificador único do volume.
    DELETE /volume/ HTTP/1.1
 
 .. code-block:: js
-{
-	"id": 3
-}
+                {
+                	"id": 3
+                }
 
 
 
