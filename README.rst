@@ -35,28 +35,27 @@ Retorna uma lista de todos os volumes registrados
    GET /volume/listar HTTP/1.1
    
 .. code-block:: js
-[{
+
                 {
                     "id": 1,
-    "siglaEvento": "Semana Acadêmica UFF",
-    "cidadeEvento": "Niterói",
-    "dataInicio": "2020-09-30",
-    "descPt": "Semana de apresentação de projetos da UFF",
-    "descEn": "UFF project presentation week ",
-    "artigos": [],
-    "numeroEvento": 1
-},
-{
-    "id": 2,
-    "siglaEvento": "Semana Acadêmica UFF",
-    "cidadeEvento": "Niterói",
-    "dataInicio": "2021-09-30",
-    "descPt": "Semana de apresentação de projetos da UFF",
-    "descEn": "UFF project presentation week ",
-    "artigos": [],
-    "numeroEvento": 2
+                    "siglaEvento": "Semana Acadêmica UFF",
+                    "cidadeEvento": "Niterói",
+                    "dataInicio": "2020-09-30",
+                    "descPt": "Semana de apresentação de projetos da UFF",
+                    "descEn": "UFF project presentation week ",
+                    "artigos": [],
+                    "numeroEvento": 1
+                },
+                {
+                    "id": 2,
+                    "siglaEvento": "Semana Acadêmica UFF",
+                    "cidadeEvento": "Niterói",
+                    "dataInicio": "2021-09-30",
+                    "descPt": "Semana de apresentação de projetos da UFF",
+                    "descEn": "UFF project presentation week ",
+                    "artigos": [],
+                    "numeroEvento": 2
                 }
-}]
 
 GET
 +++++
