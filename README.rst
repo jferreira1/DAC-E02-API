@@ -155,5 +155,178 @@ id                Identificador único do volume.
                 	"id": 3
                 }
 
+ARTIGO
+-------------
+
+==============   ===============
+Propriedade      Descrição
+==============   ===============
+id	         Identificador único do artigo.
+ordem            Define a ordem dos artigos no volume.
+idioma           Idioma original de publicação do artigo.
+titulo	         Título em idioma original do artigo.
+tituloEn	 Título em inglês do artigo.
+resumo	         Resumo geral do artigo.
+resumoEn         Resumo geral do artigo em inglês.
+keywords         Palavras-chaves do artigo.
+keywordsEn       Palavras-chaves em inglês.
+numPaginas       Número de páginas do artigo.
+autores          Autores associados ao artigo.
+==============   ===============
+
+Endpoint
+~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+    /artigo/
+    
+GET
++++++
+
+Retorna uma lista de todos os artigos registrados
+
+.. code-block:: bash
+
+   GET /artigo/listar HTTP/1.1
+   
+.. code-block:: js
+
+                {
+                    "id": 1,
+                    "ordem": 1,
+                    "email": "johndoe@email.com",
+                    "nome": "John",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "0123-4567-8901-2345"
+                },
+                {
+                    "id": 2,
+                    "ordem": 2,
+                    "email": "janedoe@email.com",
+                    "nome": "Jane",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "2345-4567-8901-0123"
+                }
+
+GET
++++++
+
+Retorna um artigo pelo parâmetro id.
+
+.. code-block:: bash
+
+   GET /artigo/listar/{id} HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id": 1,
+                    "ordem": 1,
+                    "email": "johndoe@email.com",
+                    "nome": "John",
+                    "nomeMeio": "",
+                    "sobrenome": "Doe",
+                    "afiliacao": "Universidade Teste",
+                    "afiliacaoEn": "Test University",
+                    "pais": "BR",
+                    "orcId": "0123-4567-8901-2345"
+                }
+
+POST
++++++
+
+Registra um novo artigo e retorna o objeto artigo.
+
+==============   ===============
+Parâmetro        Descrição
+==============   ===============
+ordem            Define a ordem dos artigos no volume.
+idioma           Idioma original de publicação do artigo.
+titulo	         Título em idioma original do artigo.
+tituloEn	 Título em inglês do artigo.
+resumo	         Resumo geral do artigo.
+resumoEn         Resumo geral do artigo em inglês.
+keywords         Palavras-chaves do artigo.
+keywordsEn       Palavras-chaves em inglês.
+numPaginas       Número de páginas do artigo.
+autores          Autores associados ao artigo.
+==============   ===============
+
+.. code-block:: bash
+
+   POST /artigo/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "ordem": 1,
+	            "idioma": "PT",
+	            "titulo": "Titulo no idioma original",
+	            "tituloEn": "English Title",
+	            "resumo": "Resumo do artigo, escrito no idioma do artigo.",
+	            "resumoEn": "Article abstract, wrote in english.",
+        	    "keywords": "palavras-chaves;artigo;portugues;teste;dac;mola",
+        	    "keywordsEn": "keywords;article;portuguese;test;spring",
+        	    "numPaginas": 42,
+                    "volume": {
+		            "id": 4
+	            }
+                }
 
 
+PUT
++++++
+
+Atualiza um artigo e retorna o objeto artigo atualizado.
+
+.. code-block:: bash
+
+   PUT /artigo/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                    "id":3
+		    "ordem": 1,
+	            "idioma": "ES",
+	            "titulo": "Titulo no idioma original",
+	            "tituloEn": "English Title",
+	            "resumo": "Resumo do artigo, escrito no idioma do artigo.",
+	            "resumoEn": "Article abstract, wrote in english.",
+        	    "keywords": "palavras-chaves;artigo;portugues;teste;dac;mola",
+        	    "keywordsEn": "keywords;article;portuguese;test;spring",
+        	    "numPaginas": 27,
+                    "volume": {
+		            "id": 7
+	            }
+                }
+
+DELETE
++++++
+
+Exclui um artigo
+
+==============   ===============
+Parâmetro        Descrição
+==============   ===============
+id               Identificador único do artigo.
+==============   ===============
+
+.. code-block:: bash
+
+   DELETE /artigo/ HTTP/1.1
+
+.. code-block:: js
+
+                {
+                	"id": 3
+                }
